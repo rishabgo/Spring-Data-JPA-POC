@@ -12,4 +12,9 @@ Separate @Configuration files are created for each datasource (customer, product
 - create table Customer(id int not null auto_increment primary key, email varchar(20), name varchar(20));
 
 # POSTGRES DB
--docker run --name some-postgres -e POSTGRES_PASSWORD=password -p 5432:5432 -d postgres:latest
+- docker run --name some-postgres -e POSTGRES_PASSWORD=password -p 5432:5432 -d postgres:latest
+- docker exec -it some-postgres bash
+- psql -U postgres
+- create database postgresdb;
+- \c postgresdb
+- create table Product(id int primary key, product_name varchar(50), code varchar(20));
